@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             accessor = HttpAccessor()
             resultJson =
                 accessor.getJson("https://webservice.recruit.co.jp/manabi/station/v2?prefecture=13&key=3e2b4a21beb30b57&format=json&count=1&start=$randomInt")
-            stationName = readJsonNode(resultJson.toString())
+            stationName = readJsonNode(resultJson.toString()).replace("\"", "")
             return null
         }
 
